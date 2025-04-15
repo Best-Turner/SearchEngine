@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import searchengine.repository.PageRepository;
 import searchengine.exception.InvalidUrlException;
 import searchengine.exception.OutOfBoundsUrlException;
-import searchengine.exception.PageException;
+import searchengine.exception.ApiException;
 import searchengine.model.Page;
 import searchengine.model.Site;
 import searchengine.repository.SiteRepository;
@@ -32,7 +32,7 @@ public class PageService {
     }
 
 
-    public void processPage(String url) throws PageException {
+    public void processPage(String url) throws ApiException {
         if (url == null || url.isBlank()) {
             throw new InvalidUrlException("Введите адрес страницы");
         }

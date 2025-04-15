@@ -1,4 +1,4 @@
-package searchengine.services;
+package searchengine.services.impl;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -10,6 +10,8 @@ import searchengine.model.Site;
 import searchengine.repository.LemmaRepository;
 import searchengine.repository.PageRepository;
 import searchengine.repository.SiteRepository;
+import searchengine.services.StatisticsService;
+import searchengine.services.WebLinkCrawlerService;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,7 +19,7 @@ import java.util.List;
 
 @Service
 @Qualifier(value = "extended")
-public class ExtendedStatisticServiceImpl implements StatisticsService{
+public class ExtendedStatisticServiceImpl implements StatisticsService {
 
     private final SiteRepository siteRepository;
     private final PageRepository pageRepository;

@@ -1,4 +1,4 @@
-package searchengine.services;
+package searchengine.services.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +9,8 @@ import searchengine.model.Page;
 import searchengine.model.Site;
 import searchengine.repository.IndexRepository;
 import searchengine.repository.LemmaRepository;
+import searchengine.services.HtmlTextProcessor;
+import searchengine.services.LemmaService;
 
 import java.util.List;
 import java.util.Map;

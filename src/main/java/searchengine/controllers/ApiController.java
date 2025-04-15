@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import searchengine.dto.ApiResponse;
+import searchengine.dto.response.ApiResponse;
 import searchengine.dto.statistics.StatisticsResponse;
-import searchengine.exception.PageException;
+import searchengine.exception.ApiException;
 import searchengine.services.PageService;
 import searchengine.services.StatisticsService;
 import searchengine.services.WebLinkCrawlerService;
@@ -70,7 +70,7 @@ public class ApiController {
         try {
             pageService.processPage(url);
             return new ResponseEntity<>(ApiResponse.success(), HttpStatus.CREATED);
-        } catch (PageException e) {
+        } catch (ApiException e) {
             return new ResponseEntity<>(ApiResponse.error(e.getMessage()), HttpStatus.BAD_REQUEST);
         }
     }

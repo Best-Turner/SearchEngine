@@ -1,4 +1,4 @@
-package searchengine.dto;
+package searchengine.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AccessLevel;
